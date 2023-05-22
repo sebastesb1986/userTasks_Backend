@@ -18,6 +18,16 @@ class TasksController extends Controller
 
     }
 
+    public function allTask()
+    {
+
+        $tasks = Task::select('id', 'title', 'description')
+                     ->paginate(5);
+        
+        return response()->json(['tasks' => $tasks]);
+
+    }
+
     public function show($id)
     {
         // Show Task for id

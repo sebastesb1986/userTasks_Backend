@@ -18,7 +18,7 @@ class TasksListController extends Controller
                         }])
                         ->select('id', 'list_code', 'title', 'description', 'user_id')
                         ->where('user_id', $auth->id)
-                        ->get();
+                        ->paginate(5);
 
         return response()->json(['tasklists' => $tasklists]);
 
