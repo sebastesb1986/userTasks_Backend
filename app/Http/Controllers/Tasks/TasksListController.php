@@ -63,7 +63,7 @@ class TasksListController extends Controller
 
         return response()->json(
         [
-            'success'=> 'Lista de tareas registrada exitosamente!',
+            'success'=> 'Lista de tareas creada exitosamente!',
             'code'=>200
         ]);
 

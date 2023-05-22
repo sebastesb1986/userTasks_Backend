@@ -43,7 +43,7 @@ class TasksController extends Controller
 
         return response()->json(
         [
-            'success'=> 'Tarea registrada exitosamente!',
+            'success'=> 'Tarea creada exitosamente!',
             'code'=>200
         ]);
     

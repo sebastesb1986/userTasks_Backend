@@ -42,12 +42,8 @@ class AuthController extends Controller
 
         if (!$token = auth()->attempt($validated)) {
            
-            return response()->json(['error' => 'Usuario NO registrado'], 401);
+            return response()->json(['error' => 'Usuario NO registrado o Información incorrecta'], 401);
         }
-
-        //$user = auth()->user();
-        
-        //$user->update(['token' => $token]);
         
         return $this->respondWithToken($token);
 
@@ -58,7 +54,7 @@ class AuthController extends Controller
 
         auth()->logout();
 
-        return response()->json(['message' => 'User successfully signed out']);
+        return response()->json(['message' => 'Sesión cerrada exitosamente.']);
 
     }
 
